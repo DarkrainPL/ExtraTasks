@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Author {
     private String name;
     private int age;
@@ -9,7 +11,7 @@ public class Author {
         this.favouriteGenre = favouriteGenre;
     }
 
-    public String getName() {
+        public String getName() {
         return name;
     }
 
@@ -31,5 +33,14 @@ public class Author {
 
     public void setFavouriteGenre(String favouriteGenre) {
         this.favouriteGenre = favouriteGenre;
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", favouriteGenre='" + favouriteGenre + '\'' +
+                '}';
     }
 }
