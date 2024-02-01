@@ -5,13 +5,14 @@ public class Author {
     private int age;
     private String favouriteGenre;
 
+
     public Author(String name, int age, String favouriteGenre) {
         this.name = name;
         this.age = age;
         this.favouriteGenre = favouriteGenre;
     }
 
-        public String getName() {
+    public String getName() {
         return name;
     }
 
