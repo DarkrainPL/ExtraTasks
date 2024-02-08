@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Author {
     private String name;
@@ -43,5 +44,17 @@ public class Author {
                 ", age=" + age +
                 ", favouriteGenre='" + favouriteGenre + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Author author)) return false;
+        return getAge() == author.getAge() && Objects.equals(getName(), author.getName()) && Objects.equals(getFavouriteGenre(), author.getFavouriteGenre());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getAge(), getFavouriteGenre());
     }
 }
