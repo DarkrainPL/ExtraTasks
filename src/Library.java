@@ -68,6 +68,7 @@ public class Library {
         Scanner scanner = new Scanner(System.in);
         System.out.println("What is authors name?:");
         String authorNameInput = scanner.nextLine();
+
         for (Author a : fullLibrary.keySet()) {
             if (a.getName().equals(authorNameInput)) {
                 System.out.println("What is the books title?:");
@@ -83,12 +84,11 @@ public class Library {
                 listOfBooksOfThisAuthor.add(book);
                 fullLibrary.put(a, listOfBooksOfThisAuthor);
                 start();
-            } // else {
-                System.out.println("Author is not in the database, please enter authors data:");
-                addAuthorRedirect(authorNameInput);
-                start();
-            //}
+            }
         }
+        System.out.println("Author is not in the database, please enter authors data:");
+        addAuthorRedirect(authorNameInput);
+        start();
     }
 
 
@@ -99,6 +99,7 @@ public class Library {
     }
 
     public void getAllBooks() {
+        Collections.sort(listOfBooks);
         System.out.println(listOfBooks);
     }
 
@@ -145,5 +146,6 @@ public class Library {
             fullLibrary.put(author, emptyListOfBooks);
         }
     }
+
 }
 
