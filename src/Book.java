@@ -46,6 +46,6 @@ public class Book implements Comparable<Book> {
 
     @Override
     public int compareTo(Book book) {
-        return this.numberOfPages;
+        return Integer.compare(this.numberOfPages, book.numberOfPages);
     }
 }
